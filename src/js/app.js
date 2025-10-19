@@ -1,14 +1,16 @@
 let form = document.querySelector(".user");
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  
 
   let userData = {
-    name: e.target.yame.value,
-    age: e.target.age.value,
+    info: e.target.name.value,
+    age: e.target.myage.value,
     email: e.target.eName.value,
     number: e.target.number.value,
     password: e.target.pFrom.value,
+    post: e.target.postCod.value,
+    adress: e.target.adCod.value
   };
 
  
@@ -20,7 +22,7 @@ form.addEventListener("submit", (e) => {
   }
 
  
-  if (userData.name.length < 3) {
+  if (userData.info.length < 3) {
     alert("نام باید حداقل ۳ حرف باشد!");
     return;
   }
@@ -40,7 +42,19 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
+   if (userData.postCod.length < 7) {
+    alert("کد پستی حداقل هشت رقم است!")
+    ;
+    return;
+  }
+
+  if (userData.adCod.length < 5) {
+   alert("ادرست رو کامل بنویس");
+    return;
+  }
+
 
   console.log("اطلاعات کاربر:", userData);
   alert("ثبت با موفقیت انجام شد ✅");
+   e.preventDefault();
 });

@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build",
   "build": "tailwindcss -i ./src/input.css -o ./output.css --watch"
 },
   "dependencies": {
